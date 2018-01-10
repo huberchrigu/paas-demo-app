@@ -19,11 +19,11 @@ public class MessagingController {
 
     @GetMapping("/send")
     public void sendMessage(@RequestParam String message) {
-        rabbitTemplate.convertAndSend(message);
+        rabbitTemplate.convertAndSend(RabbitMqConfig.QUEUE_NAME, message);
     }
 
     @GetMapping("/receive")
     public String receiveMessage() {
-        return (String) rabbitTemplate.receiveAndConvert();
+        return (String) rabbitTemplate.receiveAndConvert(RabbitMqConfig.QUEUE_NAME);
     }
 }
