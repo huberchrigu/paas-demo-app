@@ -2,6 +2,7 @@ package ch.silberruecken.paasdemo;
 
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/messaging")
+@Profile("!gcp")
 @AllArgsConstructor
 public class MessagingController {
     private final RabbitTemplate rabbitTemplate;

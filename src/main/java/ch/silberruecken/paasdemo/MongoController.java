@@ -2,6 +2,7 @@ package ch.silberruecken.paasdemo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/mongo")
 @AllArgsConstructor
+@Profile("!gcp")
 public class MongoController {
     private final MongoTemplate mongoTemplate;
 

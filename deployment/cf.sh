@@ -1,4 +1,4 @@
-cf login -a https://api.lyra-836.appcloud.swisscom.com -u huber.chrigu@gmail.com
+cf login -a https://api.lyra-836.appcloud.swisscom.com -u username
 cf push paas-demo -p target/paas-demo-0.0.1-SNAPSHOT.jar
 
 cf create-service mongo mongodb small

@@ -4,6 +4,4 @@ git push heroku master
 
 heroku addons:create cleardb:ignite
 heroku addons:create mongolab:sandbox
-heroku addons:plans rabbitmq-bigwig
-
-heroku app:restart
+heroku addons:create cloudamqp:lemur
